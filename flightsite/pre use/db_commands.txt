@@ -1,0 +1,3 @@
+commands on mysql command line:
+
+CREATE DATABASE flights_database;
