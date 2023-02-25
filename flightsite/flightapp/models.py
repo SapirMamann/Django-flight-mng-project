@@ -9,30 +9,30 @@ class UserRoles(models.Model):
 
 
 class User(models.Model):
-    username = models.TextField(max_length=100, unique=True)
-    password = models.TextField(max_length=100)
-    email = models.TextField(max_length=100, unique=True)
+    username = models.CharField(max_length=100, unique=True)
+    password = models.CharField(max_length=100)
+    email = models.CharField(max_length=100, unique=True)
     role = models.ForeignKey(UserRoles, on_delete=models.CASCADE)
 
 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.TextField(max_length=100)
-    last_name = models.TextField(max_length=100)
-    address = models.TextField(max_length=100)
-    phone = models.TextField(max_length=100, unique=True)
-    credit_card = models.TextField(max_length=100)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100, unique=True)
+    credit_card = models.CharField(max_length=100)
 
     
 class Administrator(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE) 
-    first_name = models.TextField(max_length=100)
-    last_name = models.TextField(max_length=100)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     
 
 class AirlineCompany(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.TextField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, unique=True)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
 
 
