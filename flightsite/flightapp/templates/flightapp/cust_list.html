@@ -1,0 +1,47 @@
+{% extends 'flightapp/base.html' %}
+
+{% block content %}
+<hr>
+<p>CUST LIST</p>
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: rgb(97, 97, 148);
+    }
+</style>
+  
+<table>
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+            {% for customer in cust_list %}
+            <tr>
+                <td>
+                    {{customer.user}}
+                </td>
+                <td>
+                    {{customer.first_name}}
+                </td>
+                <td>
+                    {{customer.last_name}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends 'flightapp/base.html' %}
+
+{% block content %}
+<hr>
+<h1>All flights</h1>
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: rgb(97, 97, 148);
+    }
+</style>
+  
+<table>
+    <thead>
+        <tr>
+            <th>airline</th>
+            <th>origin country</th>
+            <th>departure time</th>
+            <th>destination country</th>
+            <th>Landing time</th>
+            <th>remaining seats</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for flight in flights %}
+        <tr>
+            <td>
+                <p>{{flight.airline_company.name}}</p>
+            </td>
+            <td>
+                <p>{{flight.origin_country}}</p>
+            </td>
+            <td>
+                <p>{{flight.departure_time}}</p>
+            </td>
+            <td>
+                <p>{{flight.destination_country}}</p>
+            </td>
+            <td>
+                <p>{{flight.landing_time}}</p>
+            </td>
+            <td>
+                <p>{{flight.remaining_tickets}}</p>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

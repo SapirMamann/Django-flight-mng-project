@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'flightsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'flights_database',
+        'NAME': 'flights_db',
         'USER': 'root',
         'PASSWORD': 'admin1234',
         'HOST': 'localhost',
@@ -127,3 +127,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'flightapp.User'

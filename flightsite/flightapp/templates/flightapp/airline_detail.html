@@ -1,0 +1,51 @@
+{% extends 'flightapp/base.html' %}
+
+{% block content %}
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <head>Search airline by name</head>
+        <br>
+        <input type="text" name="name" placeholder="Enter airline name">
+        <br>
+        <input type="submit" value="Search">
+        <br>
+        <br>
+    </form>
+</div>
+<div>
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        th, td {
+          border: 1px solid black;
+          padding: 8px;
+          text-align: left;
+        }
+        
+        th {
+          background-color: rgb(97, 97, 148);
+        }
+    </style>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>airline user id</th>
+                <th>airline Name</th>
+                <th>airline Country</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{airline.user.id}}</td>
+                    <td>{{airline.name}}</td>
+                    <td>{{airline.country}}</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+{% endblock content %}

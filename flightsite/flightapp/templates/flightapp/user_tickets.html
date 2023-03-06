@@ -1,0 +1,55 @@
+{% extends 'flightapp/base.html' %}
+
+{% block content %}
+<hr>
+<p>My tickets</p>
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: rgb(97, 97, 148);
+    }
+</style>
+{% if tickets %}  
+<table>
+    <thead>
+        <tr>
+            <th>flight number</th>
+            <th>from</th>
+            <th>to</th>
+            <th>customer</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ticket in tickets %}
+        <tr>
+            <td>
+                {{ticket.flight_no.id}}
+            </td>
+            <td>
+                {{ticket.flight_no.origin_country.name}} at {{ticket.flight_no.departure_time}}
+            </td>
+            <td>
+                {{ticket.flight_no.destination_country.name}} at {{ticket.flight_no.landing_time}} (local time)
+
+            </td>
+            <td>
+                {{ticket.customer.first_name}} {{ticket.customer.last_name}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<a href="{% url 'add-ticket' %}">Purchase ticket now</a>
+{% endif %}
+{% endblock content %}

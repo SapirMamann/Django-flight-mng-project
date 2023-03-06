@@ -1,3 +1,6 @@
 commands on mysql command line:
 
-CREATE DATABASE flights_database;
+CREATE DATABASE flights_db;
+
+
+pip freeze >  requirements.txt

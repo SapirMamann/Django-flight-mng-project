@@ -1,0 +1,14 @@
+{% extends 'flightapp/base.html' %}
+
+{% block head %} Hi Anonymous {% endblock head %}
+
+
+{% block content %}
+<hr>
+<br>
+<a href="{% url 'register' %}">Customers Register</a>
+<br>
+<a href="{% url 'register' %}">Airline Register</a>
+<br>
+<a href="{% url 'register' %}">Admin Register</a>
+{% endblock content %}

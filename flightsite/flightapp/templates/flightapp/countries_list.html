@@ -1,0 +1,43 @@
+{% extends 'flightapp/base.html' %}
+
+{% block content %}
+<hr>
+<h1>All Countries</h1>
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: rgb(97, 97, 148);
+    }
+</style>
+  
+<table>
+    <thead>
+        <tr>
+            <th>country id</th>
+            <th>country</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for country in countries %}
+        <tr>
+            <td>
+                <p>{{country.id}}</p>
+            </td>
+            <td>
+                <p>{{country.name}}</p>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

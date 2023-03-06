@@ -1,0 +1,22 @@
+{% extends 'flightapp/base.html' %}
+
+{% block head %} Hi Admin {% endblock head %}
+
+{% block content %}
+<hr>
+HELLO ADMIN
+<br>
+<a href="{% url 'cust-list' %}">Get all Custs</a>
+<hr>
+<a href="">Add Customer</a>
+<br>
+<a href="">Remove Customer</a>
+<hr>
+<a href="">Add Airline</a>
+<br>
+<a href="">Remove Airline</a>
+<hr>
+<a href="">Remove Admin</a>
+<br>
+<a href="">Add Admin</a>
+{% endblock content %}
